@@ -1,6 +1,6 @@
-acce55t0kenIacce55t0kenIacce55t0kenIacce55t0kenIacce55t0kenIacce55t0kenIacce55t0ken
-24682 과목1별명
-24679 과목2별명
-24677 과목3별명
-24672 과목4별명
-23646 과목5별명
+Acces5T0kenIAcces5T0kenIAcces5T0kenIAcces5T0kenIAcces5T0kenIAcces5T0kenIAcces5T0kenIAcces5T0ken
+12345 과목이름1
+84372 과목이름2
+17828 과목이름3
+24612 과목이름4
+65432 과목이름5

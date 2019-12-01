@@ -16,7 +16,7 @@ with open("settings.txt","r") as f:
         setting = f.readline()
         if not setting:
             break
-        settinglist = setting.split(' ')
+        settinglist = setting.split(' ',1)
         settinglist[0] = int(settinglist[0])
         subjects.append(tuple(settinglist))
 
@@ -28,10 +28,19 @@ result["subjects"] = []
 with open("log.txt", "a") as f:
     f.write(str(datetime.now()) + "\n")
 
+cnt = 1
 for subject in subjects:
+    cnt += 1
     subjectId, subjectTitle = subject
+    subjectTitle = subjectTitle[:-1]
     notices = json.loads(os.popen('curl "https://www.yonple.com:4000/api/subject/timetable/'+str(subjectId)+'/yscec/board" -s --cookie "access_token=' + accessToken + ';"').read())
 
+    if 'message' in notices and notices['message'] == 'NOT LOGIN':
+        print("Access Token이 올바르지 않아 데이터를 가져오지 못했어요...\n더 자세한 정보를 얻기 위해서는 readme.md를 읽어주세요.")
+        raise SystemExit
+    if notices == []:
+        print(str(subjectTitle) + "의 과목 ID에 문제가 있는 것 같아요 :(\n더 자세한 정보를 얻기 위해서는 readme.md를 읽어주세요.")
+        raise SystemExit
 
     resultSubject = {}
     resultSubject["title"] = subjectTitle
