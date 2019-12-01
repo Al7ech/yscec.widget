@@ -7,6 +7,3 @@
 - React
 - Python3
 - AppleScript
-=======
-YSCEC 과목 공지를 맥북 바탕화면에 띄워주는  [Übersicht](https://github.com/felixhageloh/uebersicht) to pull notices from [YSCEC](https://yscec.yonsei.ac.kr/)
->>>>>>> Stashed changes
