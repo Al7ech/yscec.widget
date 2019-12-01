@@ -32,7 +32,7 @@ cnt = 1
 for subject in subjects:
     cnt += 1
     subjectId, subjectTitle = subject
-    subjectTitle = subjectTitle[:-1]
+    subjectTitle = subjectTitle.replace("\n","")
     notices = json.loads(os.popen('curl "https://www.yonple.com:4000/api/subject/timetable/'+str(subjectId)+'/yscec/board" -s --cookie "access_token=' + accessToken + ';"').read())
 
     if 'message' in notices and notices['message'] == 'NOT LOGIN':
